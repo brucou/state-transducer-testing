@@ -1,13 +1,5 @@
 **TODO** pending isolating the portion only related to testing
 
-|Modelize your interface | Encode the graph | Run the generated machine! |
-|:---:|:---:|:---:|
-|![password submit fsm](assets/password%20submit%20fsm.png) |![password selector fsm transitions](assets/password%20selector%20transitions%20code.png)|![password selector](assets/password%20selector.png)
-
-<div align="center">
-<img src="https://static.thenounproject.com/png/9997-200.png" width="100" heigth="50" />
-</div>
-
 | **Describe events progressing the machine**| **Get your tests generated for you!** |
 |:---:|:---:|
 | ![password selector test generation](assets/password%20selector%20test%20generation.png)| <img src="https://github.com/brucou/state-transducer/raw/WIP/assets/password%20selector%20test%20generated.png" width="450" heigth="200"/>|
