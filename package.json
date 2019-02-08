@@ -1,0 +1,82 @@
+{
+  "name": "state-transducer-testing",
+  "sideEffects": false,
+  "version": "0.11.0",
+  "description": "Extended Hierarchical State Transducer library Testing Utilities",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/brucou/state-transducer-testing"
+  },
+  "keywords": [
+    "state-machine",
+    "state machine",
+    "finite state machine",
+    "state-transducer",
+    "state transducer",
+    "automata",
+    "automaton",
+    "automata",
+    "testing",
+    "generative testing",
+    "automated testing"
+  ],
+  "module": "src/index.js",
+  "main": "dist/transducer.umd.min.js",
+  "files": [
+    "src/",
+    "dist/"
+  ],
+  "scripts": {
+    "prepublish": "npm run umd",
+    "serve": "nodemon index.js --exec babel-node",
+    "start": "watchify -d --transform babelify dist-node -o src/bundle.js -v",
+    "test": "parcel test/index.html",
+    "build": "rollup --sourcemap -c rollup.config.js"
+  },
+  "engines": {
+    "node": "6.3.0"
+  },
+  "author": "brucou",
+  "license": "MIT",
+  "devDependencies": {
+    "babel-cli": "^6.9.0",
+    "babel-core": "^6.9.1",
+    "babel-plugin-transform-class-properties": "^6.9.1",
+    "babel-plugin-transform-object-assign": "^6.8.0",
+    "babel-polyfill": "^6.9.1",
+    "babel-preset-es2015": "^6.9.0",
+    "babel-preset-react": "^6.5.0",
+    "babel-preset-stage-0": "^6.5.0",
+    "babelify": "^7.3.0",
+    "benchmark": "^2.1.2",
+    "browser-sync": "^2.18.8",
+    "fetch-jsonp": "^1.1.3",
+    "flipping": "1.1.0",
+    "hyperscript-helpers": "3.0.3",
+    "json-patch-es6": "^2.0.6",
+    "nodemon": "^1.9.2",
+    "parcel-bundler": "^1.10.3",
+    "qunitjs": "^1.20.0",
+    "ramda": "^0.25.0",
+    "react": "16.5.0",
+    "react-dom": "16.5.0",
+    "react-hyperscript": "3.2.0",
+    "rollup": "^0.63.4",
+    "rollup-plugin-commonjs": "^9.1.3",
+    "rollup-plugin-node-builtins": "^2.1.2",
+    "rollup-plugin-node-resolve": "^3.3.0",
+    "rollup-plugin-terser": "^1.0.1",
+    "rollup-plugin-uglify": "^4.0.0",
+    "watchify": "^3.8.0"
+  },
+  "dependencies": {
+    "fp-rosetree": "^0.6.2",
+    "graph-adt": "^0.7.0",
+    "state-transducer": "^0.10.3"
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "not ie <= 9"
+  ]
+}
