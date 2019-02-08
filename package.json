@@ -27,9 +27,7 @@
     "dist/"
   ],
   "scripts": {
-    "prepublish": "npm run umd",
-    "serve": "nodemon index.js --exec babel-node",
-    "start": "watchify -d --transform babelify dist-node -o src/bundle.js -v",
+    "prepublish": "npm run build",
     "test": "parcel test/index.html",
     "build": "rollup --sourcemap -c rollup.config.js"
   },
