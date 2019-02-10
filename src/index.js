@@ -1,11 +1,10 @@
 import { constructGraph, depthFirstTraverseGraphEdges } from "graph-adt"
-import { INIT_STATE } from "state-transducer"
+import { INIT_STATE, normalizeTransitions, createStateMachine, traceFSM } from "state-transducer"
 import {
   computeHistoryState, getFsmStateList, getHistoryParentState, getHistoryType, isCompoundState, isEventless,
   isHistoryControlState, isHistoryStateEdge, isInitEvent, isInitState, isShallowHistory, lastOf, merge,
   reduceTransitions
 } from "./helpers"
-import { createStateMachine, traceFSM } from "state-transducer"
 import { objectTreeLenses, PRE_ORDER, traverseObj } from "fp-rosetree"
 
 const graphSettings = {
@@ -16,16 +15,16 @@ const graphSettings = {
 
 /**
  *
- * @param {FSM_Def} fsm Machine modelizing the system under test
+ * @param {FSM_Def} fsmDef Machine modelizing the system under test
  * @param {Generators} generators
  * @param {{ strategy: SearchStrategy, ubiquitous }} settings
  * `isTraversableEdge` tells us whether to continue the path construction. `isGoalReached` tells us when to
  * stop path accumulation and aggregate the current path to current results
  * @returns {Array<TestCase>}
  */
-export function generateTestSequences(fsm, generators, settings) {
+export function generateTestSequences(fsmDef, generators, settings) {
   const startingVertex = INIT_STATE;
-  const tracedFSM = traceFSM({}, fsm);
+  const tracedFSM = traceFSM({}, fsmDef);
   const fsmStates = tracedFSM.states;
   const analyzedStates = analyzeStateTree(fsmStates);
   const initialExtendedState = tracedFSM.initialExtendedState;
@@ -37,7 +36,7 @@ export function generateTestSequences(fsm, generators, settings) {
   const genMap = getGeneratorMapFromGeneratorMachine(generators);
 
   // Build a graph from the tracedFSM, and the state machine triggering logic
-  const fsmGraph = convertFSMtoGraph(tracedFSM);
+  const fsmGraph = convertFSMtoGraph(normalizeTransitions(tracedFSM));
 
   // search that graph with the right parameters
   const search = {

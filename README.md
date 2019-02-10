@@ -34,7 +34,7 @@
   * [Terminology](#terminology)
 
 # Features
-- **small size** : treeshakeable implementation, 5k for the core, 9k including tracing and testing
+- **small size** : tree-shakeable implementation, 5k for the core, 9k including tracing and testing
 - **small API** : one function for the state machine, one function for the test generation, one 
 function for tracing
 - **just a function!** : easy to integrate into any framework
