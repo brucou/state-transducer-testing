@@ -1,5 +1,5 @@
 import { constructGraph, depthFirstTraverseGraphEdges } from "graph-adt"
-import { INIT_STATE, normalizeTransitions, createStateMachine, traceFSM } from "state-transducer"
+import { INIT_STATE, normalizeFsmDef, createStateMachine, traceFSM } from "state-transducer"
 import {
   computeHistoryState, getFsmStateList, getHistoryParentState, getHistoryType, isCompoundState, isEventless,
   isHistoryControlState, isHistoryStateEdge, isInitEvent, isInitState, isShallowHistory, lastOf, merge,
@@ -36,7 +36,7 @@ export function generateTestSequences(fsmDef, generators, settings) {
   const genMap = getGeneratorMapFromGeneratorMachine(generators);
 
   // Build a graph from the tracedFSM, and the state machine triggering logic
-  const fsmGraph = convertFSMtoGraph(normalizeTransitions(tracedFSM));
+  const fsmGraph = convertFSMtoGraph(normalizeFsmDef(tracedFSM));
 
   // search that graph with the right parameters
   const search = {

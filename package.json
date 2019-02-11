@@ -1,7 +1,7 @@
 {
   "name": "state-transducer-testing",
   "sideEffects": false,
-  "version": "0.11.1",
+  "version": "0.11.3",
   "description": "Extended Hierarchical State Transducer library Testing Utilities",
   "repository": {
     "type": "git",
@@ -70,7 +70,7 @@
   "dependencies": {
     "fp-rosetree": "^0.6.2",
     "graph-adt": "^0.7.0",
-    "state-transducer": "^0.11.1"
+    "state-transducer": "^0.11.3"
   },
   "browserslist": [
     "> 1%",
