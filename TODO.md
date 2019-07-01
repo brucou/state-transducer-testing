@@ -34,6 +34,11 @@ error is ...[0] is undefined. That means an event was sent and could not be hand
   - write DOC
 - ROADMAP : targetless events : NO only serves to confuse readability
       // NOTE : we implemented it here by repeating the self-loop corresponding to the targetless event in all substates
+- good practices when modelling
+  - when finished initial draft for model
+    - look for terminal states
+    - also make a list of events accepted by the machine and try all of thtem for all states. 
+    This is called ESA Event State Analysis
 
 # Trivia
 - example of game state machine (tetris) : https://www.colinfahey.com/tetris/tetris.html?utm_source=ponyfoo+weekly&utm_medium=email&utm_campaign=146
