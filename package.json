@@ -1,7 +1,7 @@
 {
   "name": "state-transducer-testing",
   "sideEffects": false,
-  "version": "0.11.3",
+  "version": "0.11.4",
   "description": "Extended Hierarchical State Transducer library Testing Utilities",
   "repository": {
     "type": "git",
@@ -30,9 +30,6 @@
     "prepublish": "npm run build",
     "test": "parcel test/index.html",
     "build": "rollup --sourcemap -c rollup.config.js"
-  },
-  "engines": {
-    "node": "6.3.0"
   },
   "author": "brucou",
   "license": "MIT",
